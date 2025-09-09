@@ -1,0 +1,146 @@
+.horizontal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  background-color: #03182f30;
+  border-radius: 10px;
+}
+
+/* Contenedor general del carrusel */
+.gallery {
+  max-width: 900px;
+  margin-bottom: 5rem;
+}
+
+.gallery-slider {
+  overflow: hidden;
+  border: solid 1px rgba(0, 52, 111, 0.479);
+  border-radius: 10px;
+}
+
+.gallery-card {
+  display: flex;
+  flex-wrap: wrap; /* 🔥 permite que la imagen y el contenido bajen si no caben */
+  flex-direction: row;
+  align-items: flex-start;
+  background: #07172e3e;
+  border-radius: 1rem;
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-img-container {
+  flex-shrink: 0;
+  padding: 10px;
+  width: 250px;
+  height: 203px;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  max-height: 220px;
+  border-radius: 0.75rem;
+  object-fit: cover;
+}
+
+/* Contenido derecha */
+.gallery-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  padding: 1rem;
+}
+
+.gallery-content h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.gallery-content p {
+  font-size: 1rem;
+  color: #d1d5db;
+  margin-bottom: 1rem;
+}
+
+/* Footer con botón e íconos */
+.gallery-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-live {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #007bff;
+  padding: 0.4rem 1rem;
+  border-radius: 0.5rem;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-live:hover {
+  background: #0056b3;
+}
+
+/* Tech icons */
+.gallery-tech {
+  display: flex;
+  gap: 10px;
+  font-size: 1.5rem;
+}
+
+.gallery-icon {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-icon:hover {
+  transform: scale(1.2);
+}
+
+@media (max-width: 770px) {
+  .gallery-card {
+    flex-direction: column; /* en pantallas pequeñas se apila */
+    text-align: center;
+  }
+
+  .gallery-footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .gallery-img {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .gallery {
+    max-width: 350px;
+  }
+
+  .gallery-content p {
+    font-size: 1rem;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: auto;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: none;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

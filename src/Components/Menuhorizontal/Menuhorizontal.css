@@ -1,0 +1,112 @@
+.menuhorizontal-contenedor {
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8%;
+  backdrop-filter: blur(8px);
+  background: var(--color-Menuhorizontal);
+  z-index: 1000;
+  padding: 0.8rem 2rem;
+  box-sizing: border-box;
+  font-size: 30px;
+}
+
+.menuhorizontal-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+
+.menuhorizontal-ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: none;
+}
+
+.menuhorizontal-li {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-Menuhorizontal-texto);
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.menuhorizontal-li::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: var(--color-secundario);
+  transition: width 0.3s ease;
+  cursor: pointer;
+}
+
+.menuhorizontal-li:hover {
+  color: var(--color-secundario);
+  transform: translateY(-2px);
+}
+
+.menuhorizontal-li:hover::after {
+  width: 100%;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: var(--color-texto);
+  cursor: pointer;
+}
+
+.menuhorizontal-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 2rem;
+    top: 1rem;
+    z-index: 1100;
+  }
+
+  .menuhorizontal-ul {
+    display: flex; /* ya lo tenías */
+    position: fixed;
+    top: 0;
+    right: -100%; /* fuera de pantalla */
+    height: 100vh;
+    width: 220px;
+    background: var(--color-Menuvertical);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transition: right 0.3s ease;
+    transition: all 0.6s ease;
+  }
+
+  .menuhorizontal-ul.open {
+    right: 0;
+  }
+}

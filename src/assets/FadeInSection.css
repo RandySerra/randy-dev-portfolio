@@ -1,0 +1,15 @@
+
+.fade-in {
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  width: 100%;
+  height: auto;  
+}
+
+.fade-in.show {
+  opacity: 10;
+  transform: translateY(0);
+}

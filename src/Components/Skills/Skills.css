@@ -1,0 +1,28 @@
+.carrusel-wrapper {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.carrusel-item {
+  display: flex;
+  justify-items: center;
+  text-align: center;
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carrusel-item:hover {
+  transform: scale(1.1);
+}
+
+.icono {
+  font-size: 5vh;
+  color: var(--color-secundario);
+}
+
+.carrusel-item p {
+  font-size: 1rem;
+  margin-top: 5px;
+  color: var(--color-texto);
+}

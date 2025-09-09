@@ -1,0 +1,77 @@
+.experience {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(6px);
+}
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  width: 100%;
+  max-width: 800px;
+  border-left: solid 3px #007ed1;
+  border-radius: 10px;
+  padding-left: 1rem;
+  transition: all 0.5s ease;
+}
+
+.experience-list:hover {
+  max-width: 800px;
+  border-left: solid 3px #00bfff;
+  border-radius: 10px;
+  padding-left: 1rem;
+}
+
+.contenedor-experience {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  background: #229cff1e;
+  border: 1px solid #229cff23;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contenedor-experience:hover {
+  transform: translateX(10px);
+  background: #3c86c23c;
+  box-shadow: 0 6px 15px rgba(1, 14, 53, 0.138);
+}
+
+.experiencia-img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border:solid 4px var(--color-linea);
+}
+
+.titulo-parrafo h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-texto);
+  font-weight: bold;
+}
+
+.titulo-parrafo p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-texto);
+}
+
+/* 📱 Responsivo */
+@media (max-width: 768px) {
+  .contenedor-experience {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .experiencia-img {
+    margin-bottom: 1rem;
+  }
+}
