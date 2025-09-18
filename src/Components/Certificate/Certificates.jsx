@@ -4,64 +4,75 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Certificates.css";
 
+import { IoHardwareChip } from "react-icons/io5";
+import { useTranslation } from "react-i18next";
 import { PiCertificateFill } from "react-icons/pi";
-import { IoLogoJavascript } from "react-icons/io5";
-import { FaReact, FaHtml5, FaCss3Alt } from "react-icons/fa";
-import { IoMdLink } from "react-icons/io";
+import { IoMdLink, } from "react-icons/io";
+import { MdOutlineScreenshotMonitor } from "react-icons/md";
+
+import { TbWorldSearch } from "react-icons/tb";
+import {
+  SiAdobeillustrator,
+  SiAdobephotoshop,
+  SiAdobeindesign,
+  SiAdobexd,
+} from "react-icons/si";
+import {
+  PiMicrosoftWordLogoFill,
+  PiMicrosoftExcelLogoFill,
+  PiMicrosoftPowerpointLogoFill,
+  PiMicrosoftOutlookLogoFill,
+} from "react-icons/pi";
+
+const iconMap = {
+  SiAdobeillustrator: (
+    <SiAdobeillustrator className="gallery-icon hover:text-orange-500" />
+  ),
+  SiAdobephotoshop: (
+    <SiAdobephotoshop className="gallery-icon hover:text-orange-500" />
+  ),
+  SiAdobeindesign: (
+    <SiAdobeindesign className="gallery-icon hover:text-blue-500" />
+  ),
+  SiAdobexd: <SiAdobexd className="gallery-icon hover:text-yellow-300" />,
+  TbWorldSearch: (
+    <TbWorldSearch className="gallery-icon hover:text-yellow-300" />
+  ),
+  PiMicrosoftWordLogoFill: (
+    <PiMicrosoftWordLogoFill className="gallery-icon hover:text-blue-300" />
+  ),
+  PiMicrosoftExcelLogoFill: (
+    <PiMicrosoftExcelLogoFill className="gallery-icon hover:text-orange-500" />
+  ),
+  PiMicrosoftPowerpointLogoFill: (
+    <PiMicrosoftPowerpointLogoFill className="gallery-icon hover:text-blue-500" />
+  ),
+  PiMicrosoftOutlookLogoFill: (
+    <PiMicrosoftOutlookLogoFill className="gallery-icon hover:text-yellow-300" />
+  ),
+ IoHardwareChip: (
+    <IoHardwareChip className="gallery-icon hover:text-orange-500" />
+  ),
+
+   MdOutlineScreenshotMonitor: (
+    <MdOutlineScreenshotMonitor className="gallery-icon hover:text-orange-500" />
+  ),
+};
 
 function Certificate() {
-  const certificates = [
-    {
-      titulo: "SEINP (En proceso)",
-      imagen: "/public/grafico.jpg",
-      descripcion:
-        "SEINP ofrece capacitación, talleres y asesorías en seguridad para empresas.",
-      tecnologias: [
-        <FaReact className="gallery-icon hover:text-blue-300" />,
-        <FaHtml5 className="gallery-icon hover:text-orange-500" />,
-        <FaCss3Alt className="gallery-icon hover:text-blue-500" />,
-        <IoLogoJavascript className="gallery-icon hover:text-yellow-300" />,
-      ],
-      link: "https://randyserra.github.io/seinp-security/",
-    },
-    {
-      titulo: "SEINP (En proceso)",
-      imagen: "/public/Microsoft.jpg",
-      descripcion:
-        "SEINP ofrece capacitación, talleres y asesorías en seguridad para empresa sasd asdasdasdasd.",
-      tecnologias: [
-        <FaReact className="gallery-icon hover:text-blue-300" />,
-        <FaHtml5 className="gallery-icon hover:text-orange-500" />,
-        <FaCss3Alt className="gallery-icon hover:text-blue-500" />,
-        <IoLogoJavascript className="gallery-icon hover:text-yellow-300" />,
-      ],
-      link: "https://randyserra.github.io/seinp-security/",
-    },
-    {
-      titulo: "SEINP (En proceso)",
-      imagen: "/public/img.jpeg",
-      descripcion:
-        "SEINP ofrece capacitación, talleres y asesorías en seguridad para empresas.",
-      tecnologias: [
-        <FaReact className="gallery-icon hover:text-blue-300" />,
-        <FaHtml5 className="gallery-icon hover:text-orange-500" />,
-        <FaCss3Alt className="gallery-icon hover:text-blue-500" />,
-        <IoLogoJavascript className="gallery-icon hover:text-yellow-300" />,
-      ],
-      link: "https://randyserra.github.io/seinp-security/",
-    },
-  ];
+  const { t } = useTranslation();
+  const certificates = t("certificates_list", { returnObjects: true });
 
   const settings = {
     arrows: false,
     dots: false,
     infinite: true,
     speed: 800,
-    slidesToShow: 1, // cuántas cards quieres ver a la vez
+    slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2500,
-    vertical: true, // 🔥 carrusel vertical
+    vertical: true,
     verticalSwiping: true,
   };
 
@@ -69,15 +80,13 @@ function Certificate() {
     <section className="certificates" id="certificates">
       <div className="titulos-contenedor">
         <h2 className="titulos">
-          <PiCertificateFill /> Certificates
+          <PiCertificateFill /> {t("certificates_title")}
         </h2>
-        <button className="botones">Download</button>
       </div>
 
       <Slider {...settings} className="certificates-slider">
         {certificates.map((item, index) => (
           <div className="certificates-card" key={index}>
-            {/* Imagen izquierda */}
             <div className="horizontal">
               <div className="certificates-img-container">
                 <img
@@ -87,11 +96,9 @@ function Certificate() {
                 />
               </div>
 
-              {/* Contenido derecha */}
               <div className="certificates-content titulo-parrafo">
                 <div className="titulo-parrafo">
-                  {" "}
-                  <h3 >{item.titulo}</h3>
+                  <h3>{item.titulo}</h3>
                   <p>{item.descripcion}</p>
                 </div>
 
@@ -103,10 +110,12 @@ function Certificate() {
                       rel="noopener noreferrer"
                       className="botones"
                     >
-                      <IoMdLink /> Live
+                      <IoMdLink /> {t("certificates_button_live")}
                     </a>
                   )}
-                  <div className="certificates-tech">{item.tecnologias}</div>
+                  <div className="certificates-tech">
+                    {item.tecnologias.map((iconName) => iconMap[iconName])}
+                  </div>
                 </div>
               </div>
             </div>

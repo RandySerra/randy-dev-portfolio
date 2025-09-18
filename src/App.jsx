@@ -18,23 +18,25 @@ function App() {
         <Menuhorizontal />
         <div className="app-contenido">
           <FadeInSection>
-            <Home/>
+            <Home />
+          </FadeInSection>
+          <FadeInSection className="app-contenido">
+            <Banner></Banner>
+          </FadeInSection>
+          <FadeInSection>
+            <About />
           </FadeInSection>
 
           <FadeInSection>
-            <About/>
+            <Skills />
           </FadeInSection>
 
           <FadeInSection>
-            <Skills/>
+            <Experience />
           </FadeInSection>
 
           <FadeInSection>
-            <Experience/>
-          </FadeInSection>
-
-          <FadeInSection>
-            <Proyects/>
+            <Proyects />
           </FadeInSection>
 
           <FadeInSection className="app-contenido">

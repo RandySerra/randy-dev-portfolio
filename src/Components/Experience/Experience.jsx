@@ -18,13 +18,13 @@ function Experience() {
             <div className="contenedor-experience" key={index}>
               <img
                 className="experiencia-img"
-                src={index === 0 ? "/uae.png" : "/loading.gif"} 
+                src={index === 0 ? "/randy-dev-portfolio/uae.png" : "/randy-dev-portfolio/loading.gif"} 
                 alt={element.name}
               />
               <div className="titulo-parrafo">
-                <h3>{element.name}</h3>
-                <p>{element.description}</p>
+                <h3>{element.name}</h3><p>{element.description}</p>
               </div>
+              
             </div>
           ))}
         </div>

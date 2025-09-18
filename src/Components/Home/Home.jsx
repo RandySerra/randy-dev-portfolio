@@ -23,17 +23,13 @@ function Home() {
   return (
     <div id="home" className="home">
       <div className="home-contenido">
-        {/* Foto */}
         <div className="home-foto">
-          <img src="/randy2x2.png" alt="Randy profile" />
+          <img src="/randy-dev-portfolio/randy2x2.png" alt="Randy profile" />
         </div>
 
-        {/* Info */}
         <div className="home-me">
           <h1 className="text-5xl typewriter">{t("home_title")}</h1>
           <p className="text-2xl">{t("home_subtitle")}</p>
-
-          {/* Botones */}
           <div className="home-botones">
             {botones.map((element, index) => (
               <a

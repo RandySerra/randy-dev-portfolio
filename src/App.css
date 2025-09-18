@@ -1,4 +1,3 @@
-/* 🎨 Variables por defecto (modo claro) */
 :root {
   --color-fondo: #eff7fb;
 
@@ -20,10 +19,10 @@
   --color-Menuhorizontal-texto: #0c254e8c;
   --color-Menuvertical: #ddecf5;
 
-  --color-card-projecs: #82c7ff32;
-  --color-card-projecs-hover: #4c8bac1d;
+  --color-card-projecs: #00aeff22;
+  --color-card-projecs-hover:  #00509b22;;
 
-  --color-card-certificate: #1478c422;
+  --color-card-certificate: #0184c12d;
 }
 
 /* 🌙 Variables para modo oscuro */
@@ -35,7 +34,7 @@
   --color-linea: #eff7fb;
 
   --color-primario: #0061b1;
-  --color-secundario: #51e5ff;
+  --color-secundario: #00c3ff;
 
   --color-card: #1a1a1a;
   --color-card-foto: rgb(228, 241, 255);
@@ -51,7 +50,7 @@
   --color-card-projecs: #4c9ddf32;
   --color-card-projecs-hover: #0c244a7d;
 
-  --color-card-certificate: #0c244a;
+  --color-card-certificate: #0a1f41;
 }
 * {
   margin: 0;
@@ -60,10 +59,16 @@
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Nunito", sans-serif;
   background-color: var(--color-fondo);
   color: var(--color-texto);
   line-height: 1.5;
+}
+
+
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.8rem;
 }
 
 .app {
@@ -110,7 +115,6 @@ footer {
   gap: 2rem;
 }
 
-/* Título */
 .titulos {
   font-size: 2rem;
   color: var(--color-texto);
@@ -124,9 +128,9 @@ footer {
 .titulos-contenedor {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* 🔥 título a la izquierda, botón a la derecha */
+  justify-content: space-between;
 }
-/* botones*/
+
 .botones {
   display: flex;
   flex-direction: row;
@@ -147,7 +151,6 @@ footer {
   color: var(--color-botones-hover-texto);
 }
 
-/* ===== Ajustes responsivos ===== */
 @media (max-width: 1024px) {
   main {
     padding: 1.5rem;
@@ -165,7 +168,6 @@ footer {
 
   .app-contenido {
     padding: 0.5rem;
-    border-width: 1px;
   }
 }
 
@@ -186,5 +188,8 @@ footer {
   footer {
     font-size: 0.8rem;
     padding: 0.5rem;
+  }
+  .titulos {
+    font-size: 1.5rem;
   }
 }
